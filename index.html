@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8-Puzzle BFS Solver</title>
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>8-Puzzle Solver (BFS)</h1>
+
+    <div class="card">
+      <div class="boards">
+        <div>
+          <strong>Initial board</strong>
+          <div class="grid" id="initial"></div>
+        </div>
+        <div>
+          <strong>Goal board</strong>
+          <div class="grid" id="goal"></div>
+        </div>
+      </div>
+      <div class="hint">
+        Type a different number in each cell. Use 0 for the blank. 
+        Moving a tile costs the number on it.
+      </div>
+      <button onclick="onSolve()">Solve</button>
+      <div id="message" class="error"></div>
+    </div>
+
+    <div class="card" id="result" style="display:none">
+      <div class="summary" id="summary"></div>
+      <div class="steps" id="steps"></div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

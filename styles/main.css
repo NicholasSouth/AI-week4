@@ -1,0 +1,95 @@
+:root {
+  color-scheme: dark;
+  --bg: #1a0b14;
+  --surface: #2a1220;
+  --surface-raised: #3a1a2c;
+  --border: #7a3358;
+  --text: #fbe9f1;
+  --text-muted: #d9a5bf;
+  --accent: #d6336c;
+  --accent-hover: #ea4c85;
+  --accent-text: #ffffff;
+  --highlight: #ff8fb8;
+  --highlight-text: #3a0d22;
+  --blank: #1f0e18;
+  --error: #ff8a9b;
+  --shadow: rgba(0, 0, 0, 0.45);
+}
+
+body {
+  font-family: "Consolas", "Time New Roman", monospace;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 24px;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+.wrap { max-width: 900px; margin: 0 auto; }
+h1 { margin-top: 0; color: var(--accent-hover); }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.boards { display: flex; gap: 40px; flex-wrap: wrap; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 6px;
+  margin-top: 8px;
+}
+.grid input,
+.cell {
+  width: 60px;
+  height: 60px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 22px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--text);
+}
+.grid input:focus {
+  outline: none;
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.cell { display: flex; align-items: center; justify-content: center; }
+.cell.blank { background: var(--blank); color: var(--blank); }
+.cell.moved {
+  background: var(--highlight);
+  border-color: var(--accent-hover);
+  color: var(--highlight-text);
+  font-weight: bold;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-text);
+  cursor: pointer;
+  margin-top: 16px;
+}
+button:hover { background: var(--accent-hover); }
+.hint { color: var(--text-muted); font-size: 14px; margin-top: 8px; }
+.error { color: var(--error); font-weight: bold; margin-top: 10px; }
+
+.summary { font-size: 18px; margin-bottom: 14px; }
+.steps { display: flex; flex-wrap: wrap; gap: 18px; }
+.step { text-align: center; }
+.step .grid { grid-template-columns: repeat(3, 46px); gap: 4px; }
+.step .cell { width: 46px; height: 46px; font-size: 18px; border-radius: 6px; }
+.caption { font-size: 13px; margin-top: 6px; color: var(--text-muted); }
